@@ -7,7 +7,7 @@ body {
     padding: 0;
 }
 
-header, footer {
+header {
     background-color: #333;
     color: white;
     padding: 20px;
@@ -73,6 +73,53 @@ main {
     order: 2; /* Paragraph comes second */
 }
 
+/* --- RESPONSIVE FOOTER SECTION (Mobile Default) --- */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 35px 20px;       /* 🔸 SPACING ADJUSTMENT 1: Outer padding */
+    text-align: center;
+}
+
+.footer-container {
+    display: flex;
+    flex-direction: column;   /* Stacks footers blocks vertically on mobile */
+    gap: 25px;
+    margin-bottom: 25px;      /* 🔸 SPACING ADJUSTMENT 2: Margin space above copyright */
+}
+
+.footer-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.footer-column h4 {
+    margin: 0 0 10px 0;
+    color: #fff;
+}
+
+.footer-column a {
+    color: #bbb;
+    text-decoration: none;
+}
+
+.footer-column button {
+    padding: 6px 12px;
+    background-color: #555;
+    color: white;
+    border: 1px solid #777;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.copyright {
+    color: #888;
+    font-size: 0.85rem;
+    margin: 0;
+}
+
 
 /* ==========================================================================
    2. TABLET SCREEN BREAKPOINT (Min-width: 600px)
@@ -86,6 +133,17 @@ main {
     /* 🚨 REQUIREMENT: Paragraph should show up on tablet and desktop */
     .team-bio {
         display: block;
+    }
+
+    /* 🚨 REQUIREMENT: Footer columns should spread horizontally on larger screens */
+    .footer-container {
+        flex-direction: row;            /* Side-by-side columns */
+        justify-content: space-around;  /* Even spacing layout */
+        text-align: left;
+    }
+
+    .footer-column {
+        align-items: flex-start;        /* Left-align link rows */
     }
 }
 
